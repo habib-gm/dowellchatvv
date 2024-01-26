@@ -2,26 +2,27 @@
 
 This documentation provides an overview and usage guide for the React Chat App, a simple chat application developed using React. The app includes a chat button on the main page that, when clicked, opens a chat modal powered by the DowellChat component.
 
-## Home Component
+# Home Component
 Overview
 The Home component serves as the main entry point for the application. It includes a chat button that toggles the visibility of the chat modal when clicked.
 
 # Usage
 
-import { useState } from "react";
-import DowellChat from "../Chat/DowellChat";
+```
+ import { useState } from "react";
+ import DowellChat from "../Chat/DowellChat";
 
-const Home = ({ position }) => {
+ const Home = ({ position }) => {
   const [modal, setModal] = useState(false);
   
   const toggleModal = () => {
-    setModal(!modal);
+   setModal(!modal);
   };
 
-  return (
-    <div className={`${position}`}>
-      <button
-        className={`${modal ? "bg-red-300" : "bg-blue-300"} p-3 rounded-full`}
+ return (
+  <div className={`${position}`}>
+    <button
+      className={`${modal ? "bg-red-300" : "bg-blue-300"} p-3 rounded-full`}
         onClick={toggleModal}
       >
         chat
@@ -46,6 +47,8 @@ const Home = ({ position }) => {
 
 export default Home;
 
+```
+
 # Props
 
     position: Position of the Home component on the page (e.g., "fixed top-0 right-0").
@@ -56,6 +59,8 @@ export default Home;
 The DowellChat component represents the chat modal, providing a simple interface for users to exchange messages. It includes a title, a message display area, an input field, and a send button.
 
 # Usage
+
+```
 import React, { useState } from "react";
 import { IoIosSend } from "react-icons/io";
 
@@ -106,6 +111,7 @@ const DowellChat = ({ title, ContainerPosition, inputStyle, buttonStyle }) => {
 };
 
 export default DowellChat;
+```
 
 # Props
 
